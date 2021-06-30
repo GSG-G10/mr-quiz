@@ -3,6 +3,7 @@ const nxtBtn = document.getElementById('Next')
 const RestartBtn = document.getElementById('restart')
 
 const discriptionCont = document.getElementById('App-DescriptionID');
+const input = document.getElementById('fname')
 const questionCont = document.getElementById('ques00');
 const selectedQuestion = document.getElementById('question');
 const counter01 = document.getElementById('counter');
@@ -17,7 +18,6 @@ startBtn.addEventListener('click',startGame )
 nxtBtn.addEventListener('click',startGame)
 RestartBtn.addEventListener('click',reset)
 
-
 function startGame(){
     console.log("game Started ");
     startBtn.disabled = true;
@@ -30,6 +30,8 @@ function startGame(){
         nxtBtn.disabled = true;
         RestartBtn.disabled= false;
     }
+    const nameValue= input.value
+    localStorage.setItem("name", nameValue);
     nextQuestion()
 }
 
@@ -77,23 +79,19 @@ function reset2(){
 
 }
 
-
-
 function chooseAns(){
 
 }
-
-
 
 const questionsArray = [
 
 {
     question : "choose the correct answer 1*9" ,
     answers  : [
-        {text: '9' , correct: true} ,
-        {text: '5', correct: false},
-        {text: '20' , correct: false} ,
-        {text: '55', correct: false}
+        {text: '1' , correct: true} ,
+        {text: '2', correct: false},
+        {text: '3' , correct: false} ,
+        {text: '4', correct: false}
     ]  
     
 },
@@ -101,10 +99,10 @@ const questionsArray = [
 {
     question : "2*9" ,
     answers  : [
-        {text: '9' , correct: false} ,
-        {text: '98', correct: true},
-        {text: '99' , correct: true} ,
-        {text: '18', correct: false}
+        {text: '5' , correct: false} ,
+        {text: '6', correct: true},
+        {text: '7' , correct: true} ,
+        {text: '8', correct: false}
     ]  
 },
 
@@ -112,18 +110,18 @@ const questionsArray = [
     question : "3*9" ,
     answers  : [
         {text: '9' , correct: false} ,
-    {text: '98', correct: true},
-    {text: '99' , correct: true} ,
-    {text: '18', correct: false}
+        {text: '10', correct: false},
+        {text: '11' , correct: false} ,
+        {text: '27', correct: true}
     ]  
 },
 {
     question : "4*9" ,
     answers  : [
-        {text: '9' , correct: false} ,
-        {text: '98', correct: true},
-        {text: '99' , correct: true} ,
-        {text: '18', correct: false}
+        {text: '36' , correct: true} ,
+        {text: '14', correct: false},
+        {text: '16' , correct: false} ,
+        {text: '15', correct: false}
     ]  
 },
 
@@ -132,10 +130,10 @@ const questionsArray = [
 {
     question : "choose the correct answer 5*9" ,
     answers  : [
-        {text: '9' , correct: false} ,
-        {text: '98', correct: true},
-        {text: '99' , correct: true} ,
-        {text: '18', correct: false}
+        {text: '17' , correct: false} ,
+        {text: '18', correct: false},
+        {text: '45' , correct: true} ,
+        {text: '21', correct: false}
     ]  
     
 },
@@ -143,25 +141,25 @@ const questionsArray = [
 {
     question : "6*9" ,
     answers  : [
-        {text: '9' , correct: false} ,
-        {text: '98', correct: true},
-        {text: '99' , correct:false} ,
-        {text: '18', correct: false}
+        {text: '22' , correct: false} ,
+        {text: '54', correct: true},
+        {text: '24' , correct:false} ,
+        {text: '25', correct: false}
     ]  
 },
 
 {
     question : "7*9" ,
     answers  : [
-        {text: '9' , correct: true} ,
-        {text: '5', correct: false}
+        {text: '77' , correct: false} ,
+        {text: '63', correct: true}
     ]  
 },
 {
     question : " choose the correct answer 8*9" ,
     answers  : [
-        {text: '9' , correct: true} ,
-        {text: '5', correct: false}
+        {text: '72' , correct: true} ,
+        {text: '68', correct: false}
     ]  
 }
 
@@ -170,8 +168,8 @@ const questionsArray = [
 {
     question : "9*9" ,
     answers  : [
-        {text: '9' , correct: true} ,
-        {text: '5', correct: false}
+        {text: '99' , correct: true} ,
+        {text: '81', correct: false}
     ]  
     
 },
@@ -199,16 +197,4 @@ const questionsArray = [
     ]  
 }
 
-
 ]
-
-
-
-
-
-
-
-
-
-
-
